@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 @AllArgsConstructor
 public class TweetDTO implements Serializable {
-    private String id;
+    private Long id;
     private String mensaje;
     private Long usuarioCreadorId;
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")

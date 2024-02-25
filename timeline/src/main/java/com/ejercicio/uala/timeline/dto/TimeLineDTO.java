@@ -1,6 +1,5 @@
 package com.ejercicio.uala.timeline.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

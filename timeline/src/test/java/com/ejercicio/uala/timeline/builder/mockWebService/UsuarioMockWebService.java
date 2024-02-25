@@ -23,11 +23,11 @@ public class UsuarioMockWebService {
         return instance;
     }
 
-    public UsuarioMockWebService conUsuarioConSeguidoresValidos(Long id, String username, List<Long> seguidosId) throws JSONException {
+    public UsuarioMockWebService conUsuarioConSeguidoresValidos() throws JSONException {
         MockResponse respuesta = new MockResponse()
                 .setResponseCode(HttpStatus.OK.value())
                 .setBody(new JSONObject(
-                        "{\"id\": \"" + id + "\", \"username\": \"" + username + "\", \"seguidosId\":" + seguidosId +" } ").toString())
+                        "{\"id\": \" 1\", \"username\": \"ichiban\", \"seguidosId\":[1] } ").toString())
                 .addHeader(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
         this.respuestas.add(respuesta);
         return this;
