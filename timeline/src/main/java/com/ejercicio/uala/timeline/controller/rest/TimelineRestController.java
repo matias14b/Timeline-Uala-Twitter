@@ -13,9 +13,9 @@ public class TimelineRestController {
 
     private final TimeLineServiceImpl timeLineService;
 
-    @GetMapping("/api/timeline/tweets/{idUsuarios}")
+    @GetMapping("/api/timeline/{idUsuario}")
     @ResponseStatus(HttpStatus.CREATED)
-    public TimeLineDTO obtenerTweetsPorUsuariosId(@PathVariable Long idUsuarios, @RequestParam int pagina, @RequestParam int tamanio, @RequestParam String sort) {
-        return timeLineService.obtenerTweetsDeUsuariosSeguidoPorUsuarioId(idUsuarios, pagina, tamanio, sort);
+    public TimeLineDTO obtenerTweetsPorUsuariosId(@PathVariable Long idUsuario, @RequestParam int pagina, @RequestParam int tamanio, @RequestParam String sort) {
+        return timeLineService.obtenerTweetsDeUsuariosSeguidoPorUsuarioId(idUsuario, pagina, tamanio, sort);
     }
 }

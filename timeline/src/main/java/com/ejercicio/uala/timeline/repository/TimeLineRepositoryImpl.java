@@ -28,7 +28,7 @@ public class TimeLineRepositoryImpl implements TimeLineRespository {
     @Cacheable("obtenerTweetsDeUsuariosSeguidoPorUsuarioId")
     public List<TweetDTO> obtenerTweetsDeUsuariosSeguidoPorUsuarioId(Long id, int pagina, long tamanio, String sort) {
         return restClient.method(HttpMethod.GET)
-                .uri(urlBase + puertoTweet + "/api/timeline/" + id + "/tweets/?page=" + pagina + "&size=" + tamanio + "&sort=" + sort)
+                .uri(urlBase + puertoTweet + "/api/" + id + "/tweets/?page=" + pagina + "&size=" + tamanio + "&sort=" + sort)
                 .retrieve()
                 .body(new ParameterizedTypeReference<>() {
                 });
