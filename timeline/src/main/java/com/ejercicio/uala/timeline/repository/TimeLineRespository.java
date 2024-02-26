@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface TimeLineRespository {
 
-    List<TweetDTO> obtenerTweetsDeUsuariosSeguidoPorUsuarioId(Long id, int pagina, long tamanio, String sort);
+    List<TweetDTO> obtenerTimeLinePorUsuarioId(Long id, int pagina, long tamanio, String sort);
 
     UsuarioDTO obtenerUsuario(Long id);
 

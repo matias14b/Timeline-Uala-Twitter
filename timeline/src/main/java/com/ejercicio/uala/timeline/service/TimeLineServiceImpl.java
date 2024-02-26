@@ -16,9 +16,9 @@ public class TimeLineServiceImpl implements TimeLineService {
     private final TimeLineRepositoryImpl timeLineRepository;
 
     @Override
-    public TimeLineDTO obtenerTweetsDeUsuariosSeguidoPorUsuarioId(Long idUsuario, int pagina, long tamanio, String sort) {
+    public TimeLineDTO obtenerTimeLinePorUsuarioId(Long idUsuario, int pagina, long tamanio, String sort) {
         UsuarioDTO usuario = timeLineRepository.obtenerUsuario(idUsuario);
-        List<TweetDTO> tweets = timeLineRepository.obtenerTweetsDeUsuariosSeguidoPorUsuarioId(idUsuario, pagina, tamanio, sort);
+        List<TweetDTO> tweets = timeLineRepository.obtenerTimeLinePorUsuarioId(idUsuario, pagina, tamanio, sort);
         TimeLineDTO timeline = new TimeLineDTO();
 
         timeline.setUsuarioId(usuario.getId());

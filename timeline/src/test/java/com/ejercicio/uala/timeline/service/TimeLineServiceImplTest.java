@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -32,7 +31,7 @@ public class TimeLineServiceImplTest {
 
         try (MockWebServer mockWebServer = UsuarioMockWebService.conPeticion(apiUrlServicioUsuario).conUsuarioConSeguidoresValidos().mock()) {
             try (MockWebServer mockWebServerTweet = TweetMockWebService.conPeticion(apiUrlServicioTweet).conDosTweetsPaginaCeroOrdenadoFechaCreacionAsc().mock()) {
-                TimeLineDTO timeLineDTO = timeLineService.obtenerTweetsDeUsuariosSeguidoPorUsuarioId(id, 0, 1, "fechaCreacion,asc");
+                TimeLineDTO timeLineDTO = timeLineService.obtenerTimeLinePorUsuarioId(id, 0, 1, "fechaCreacion,asc");
                 assertThat(timeLineDTO).isNotNull();
                 assertThat(timeLineDTO.getUsername()).isEqualTo("ichiban");
                 assertThat(timeLineDTO.getUsuarioId()).isEqualTo(id);
